@@ -1,7 +1,7 @@
 require 'sinatra'
 
 get '/' do
-	erb :timetovote
+	erb :timetovote, :locals => {:name => params[:u]}
 end
 
 
@@ -18,6 +18,10 @@ __END__
 		<div id="paper1" class="paper">
 			<img id="pen" src="pen.png" alt="pen"  width="450">
 			<h1>
+				<% if name %>
+					Hey  <%= name %>!
+					<br/>
+				<% end %>
 				What time are you going to vote?
 			</h1>
 			<hr>
