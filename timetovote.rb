@@ -15,7 +15,7 @@ __END__
 		<meta charset="utf-8" />
 	</head>
 	<body>
-		<div id="paper">
+		<div id="paper1" class="paper">
 			<img id="pen" src="pen.png" alt="pen"  width="450">
 			<h1>
 				What time are you going to vote?
@@ -26,12 +26,33 @@ __END__
 			</p>
 			<hr style="margin-bottom:25px">
 
-			<div class="button">Go!</div>
+			<div id="go" class="button">Go!</div>
+		</div>
+		<div id="paper2" class="paper">
+			<img id="pen" src="pen.png" alt="pen"  width="450">
+			<h1 style=>
+				Thanks! You are our <strong>15146th</strong> voter!
+			</h1>
+			<hr>
+			<p style="text-align: center; margin-top: 50px">
+				<i class="fa fa-facebook-square" style="color: #4967a1"></i>
+				<i class="fa fa-twitter-square" style="color: #3aa2f3"></i>
+				<i class="fa fa-google-plus-square" style="color: #cc5d50"></i>
+				<i class="fa fa-pinterest-square" style="color: #b1373d"></i>
+			</p>
 
 		</div>
-
-
+		<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" integrity="sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU" crossorigin="anonymous">
 		<style type = "text/css">
+
+			.fa{
+				font-size: 2em;
+				transition: all 0.2s ease-in-out;
+			}
+
+			.fa:hover{
+				color: #666;				
+			}
 
 			hr {
 				width: 30%;
@@ -40,12 +61,21 @@ __END__
 				background: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/purty_wood.png");
 			}
 
-			#paper {
+			.paper {
 				background: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/lightpaperfibers.png");
 				width: 80%;
 				margin: 0 auto;
 				height: 85%;
 				box-shadow: 4px 4px 16px #555;
+				transition: all 0.4s ease-in-out;
+			}
+
+			#paper1{
+				display:block;
+			}
+
+			#paper2{
+				display:none;
 			}
 
 			h1{
@@ -97,5 +127,20 @@ __END__
 			}
 
 		</style>
+
+		<script type="text/javascript">
+
+var button   = document.getElementById("go"),
+    paper1     = document.getElementById("paper1"),
+    paper2     = document.getElementById("paper2"),
+    proceed = function() {
+      		paper2.style.display="block";
+      		paper1.style.display="none";
+          }
+    
+
+button.addEventListener("click", proceed);
+
+		</script>
 	</body>
 </html>
