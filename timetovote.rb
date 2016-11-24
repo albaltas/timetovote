@@ -1,7 +1,7 @@
 require 'sinatra'
 
 get '/' do
-	erb :timetovote, :locals => {:name => params[:u]}
+	erb :timetovote, :locals => {:name => params[:name]}
 end
 
 
